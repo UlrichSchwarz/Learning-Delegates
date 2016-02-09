@@ -15,13 +15,14 @@ class ViewController: UIViewController, SecondViewControllerDelegate {
 
     @IBOutlet weak var AusgabeLabel: UILabel!
     
-     func textSenden(text: String) {
+    
+    func textSenden(text: String) {
         print("in Methode textSenden")
         AusgabeLabel.text = "test"
     }
     
     override func viewWillAppear(animated: Bool) {
-        secondVC.delegate = self
+        
     }
     
     override func viewDidLoad() {
