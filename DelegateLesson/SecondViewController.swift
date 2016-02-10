@@ -11,7 +11,7 @@ import UIKit
 // die Angabe von class macht die Delegate Methoden zu Pflicht-Methoden also nicht Optional
 protocol SecondViewControllerDelegate: class  {
     
-    func textSenden(sender:UIViewController, text:String)
+    func textSenden(text:String)
 }
 
 class SecondViewController: UIViewController {
@@ -22,7 +22,7 @@ class SecondViewController: UIViewController {
     
     @IBAction func SendText(sender: AnyObject) {
         print(InputTextField.text)
-        self.delegate?.textSenden(self, text: InputTextField.text!)
+        self.delegate?.textSenden(InputTextField.text!)
         navigationController?.popViewControllerAnimated(true)
         
     }

@@ -9,6 +9,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, SecondViewControllerDelegate {
     
   
@@ -16,8 +17,10 @@ class ViewController: UIViewController, SecondViewControllerDelegate {
     @IBOutlet weak var AusgabeLabel: UILabel!
     
     
-    func textSenden(sender: UIViewController,text: String) {
+    func textSenden(text: String) {
         print("in Methode textSenden")
+        let secondVC:SecondViewController = SecondViewController()
+        secondVC.delegate = self
         AusgabeLabel.text = text
     }
     
@@ -36,7 +39,7 @@ class ViewController: UIViewController, SecondViewControllerDelegate {
             var secondVC:SecondViewController = SecondViewController()
             secondVC = segue.destinationViewController as! SecondViewController
             secondVC.delegate = self
-            
+    
         
 
     }
