@@ -11,14 +11,14 @@ import UIKit
 
 class ViewController: UIViewController, SecondViewControllerDelegate {
     
-   var secondVC = SecondViewController()
+  
 
     @IBOutlet weak var AusgabeLabel: UILabel!
     
     
-    func textSenden(text: String) {
+    func textSenden(sender: UIViewController,text: String) {
         print("in Methode textSenden")
-        AusgabeLabel.text = "test"
+        AusgabeLabel.text = text
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -28,9 +28,18 @@ class ViewController: UIViewController, SecondViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        secondVC.delegate = self
+       
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+            var secondVC:SecondViewController = SecondViewController()
+            secondVC = segue.destinationViewController as! SecondViewController
+            secondVC.delegate = self
+            
+        
+
+    }
   
    }
 

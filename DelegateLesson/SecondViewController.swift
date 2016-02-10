@@ -9,9 +9,9 @@
 import UIKit
 
 // die Angabe von class macht die Delegate Methoden zu Pflicht-Methoden also nicht Optional
- protocol SecondViewControllerDelegate: class {
+protocol SecondViewControllerDelegate: class  {
     
-    func textSenden(text:String)
+    func textSenden(sender:UIViewController, text:String)
 }
 
 class SecondViewController: UIViewController {
@@ -22,7 +22,7 @@ class SecondViewController: UIViewController {
     
     @IBAction func SendText(sender: AnyObject) {
         print(InputTextField.text)
-        self.delegate?.textSenden(InputTextField.text!)
+        self.delegate?.textSenden(self, text: InputTextField.text!)
         navigationController?.popViewControllerAnimated(true)
         
     }
@@ -41,6 +41,8 @@ class SecondViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*
