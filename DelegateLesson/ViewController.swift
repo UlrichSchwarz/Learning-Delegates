@@ -12,37 +12,28 @@ import UIKit
 
 class ViewController: UIViewController, SecondViewControllerDelegate {
     
-  
-
+    
+    
     @IBOutlet weak var AusgabeLabel: UILabel!
     
     
-    func textSenden(text: String) {
-        print("in Methode textSenden")
-        let secondVC:SecondViewController = SecondViewController()
-        secondVC.delegate = self
+    func meldung(text: String) {
         AusgabeLabel.text = text
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-       
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-            var secondVC:SecondViewController = SecondViewController()
-            secondVC = segue.destinationViewController as! SecondViewController
-            secondVC.delegate = self
-    
+        var secondVC = SecondViewController()
+        secondVC = segue.destinationViewController as! SecondViewController
+        secondVC.delegate = self
         
-
+        
+        
     }
-  
-   }
+    
+}
 
