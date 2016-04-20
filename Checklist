@@ -1,0 +1,12 @@
+Delegates an Protocols in Swift
+
+
+- [x] erstelle ein Protokoll im Sender     
+       protocol SendersMessageDelegate {func shareMessage(sender: Sender, message: NSString) -> NSString (optional: kommt vom Empfänger zurück)
+        }
+       der Absender soll auch übermittelt werden (Sender) und eine Nachricht (message) als NSString
+- [x] erstelle eine Variable im Sender vom Typ des Protokolls zb. var delegate: SendersMessageDelegate
+- [x] im Sender kann das Auslösen der Nachricht erzeugt werden : delegate.shareMessage(sender:self, message: „Nachricht“) soll der Empfänger was schicken muss die funk im Protokoll einen Return-Wert haben und die Nachricht des Empfängers kann direkt in eine Var entgegengenommen werden z.B. let return = delegate.shareMessage(sender:self, message: „Nachricht“) 
+- [x] Der Empfänger soll dem Protokoll folgen  wenn er was empfangen will  class: Empfänger : SendersMessageDelegate {}
+- [x] Der Empfänger muss die Methoden implementieren, welche im Protokoll festgelegt sind , hat die Methode einen Return-Wert geht dieser wiederum zum Sender zurück.
+- [x] an geeigneter Stelle  Instanzen von Sender und Empfänger erzeugen und sender.delegate = receiver setzen(das sender.delegate auf den receiver zeigen lassen)              
